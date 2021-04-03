@@ -19,7 +19,12 @@
     "@angular/platform-browser": "~8.1.3",
     "@angular/platform-browser-dynamic": "~8.1.3",
     "@angular/router": "~8.1.3",
+    "keycloak-angular": "^7.3.1",
+    "keycloak-js": "^9.0.3",
+    "ng": "0.0.0",
     "rxjs": "~6.4.0",
+    "slim-api": "git+ssh://git@github.com/pguso/openapi-typescript-angular-client.git",
+    "tsc": "^1.20150623.0",
     "tslib": "^1.9.0",
     "zone.js": "~0.9.1"
   },

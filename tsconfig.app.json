@@ -5,7 +5,8 @@
     "types": []
   },
   "include": [
-    "src/**/*.ts"
+    "src/**/*.ts",
+    "node_modules/slim-api/**/*.ts"
   ],
   "exclude": [
     "src/test.ts",
