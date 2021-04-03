@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { TasksRoutingModule } from './tasks-routing.module';
 import { TaskListComponent } from './pages/task-list/task-list.component';
+import {ApiModule} from '../api/api.module';
+import {MaterialModule} from '../../material/material.module';
 
 
 @NgModule({
@@ -11,7 +13,9 @@ import { TaskListComponent } from './pages/task-list/task-list.component';
   ],
   imports: [
     CommonModule,
-    TasksRoutingModule
+    TasksRoutingModule,
+    ApiModule,
+    MaterialModule
   ]
 })
 export class TasksModule { }
