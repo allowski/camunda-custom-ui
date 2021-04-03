@@ -9,7 +9,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class ApiConfiguration {
-  rootUrl: string = 'http://localhost:8080/engine-rest';
+  rootUrl: string = 'http://localhost:8080/camunda/engine-rest';
 }
 
 /**

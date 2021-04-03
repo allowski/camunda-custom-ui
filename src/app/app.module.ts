@@ -5,19 +5,22 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {HttpClientModule} from '@angular/common/http';
 import {KeycloakAngularModule, KeycloakService} from 'keycloak-angular';
+import {ApiModule} from './api/api.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MaterialModule} from '../material/material.module';
 
-function initializeKeycloak(keycloak: KeycloakService) {
+export function initializeKeycloak(keycloak: KeycloakService) {
   return () =>
     keycloak.init({
+      bearerExcludedUrls: [],
       config: {
-        url: 'http://localhost:9000/auth/',
+        url: 'http://localhost:9000/auth',
         realm: 'camunda',
-        clientId: 'camunda-angular-client',
+        clientId: 'camunda-angular-client'
       },
       initOptions: {
-        onLoad: 'check-sso',
-        silentCheckSsoRedirectUri:
-          window.location.origin + '/assets/silent-check-sso.html',
+        onLoad: 'login-required',
+        // silentCheckSsoRedirectUri: window.location.origin + '/assets/silent-check-sso.html',
       },
     });
 }
@@ -27,10 +30,13 @@ function initializeKeycloak(keycloak: KeycloakService) {
     AppComponent
   ],
   imports: [
+    ApiModule,
     BrowserModule,
     AppRoutingModule,
+    MaterialModule,
     HttpClientModule,
-    KeycloakAngularModule
+    KeycloakAngularModule,
+    BrowserAnimationsModule
   ],
   providers: [
     {
