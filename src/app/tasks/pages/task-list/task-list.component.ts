@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {TaskService} from '../../../api/services/task.service';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-task-list',
@@ -7,9 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TaskListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private task: TaskService, private http: HttpClient) { }
 
   ngOnInit(): void {
+    this.http.get('http://localhost:8080/camunda/engine-rest/task').subscribe(r => console.log);
   }
 
 }

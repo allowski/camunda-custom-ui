@@ -19,7 +19,10 @@ export class AppComponent implements AfterViewInit {
   }
 
   ngAfterViewInit() {
+  }
 
+  logout() {
+    this.keycloak.logout(window.location.href);
   }
 
 }
